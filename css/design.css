@@ -49,7 +49,7 @@ select
 }
 
 
-input[type=submit]
+input[type=submit],#login
 {
 	width: 100%;
 	box-sizing: border-box;
