@@ -6,7 +6,11 @@ import bcrybt from 'bcrypt';
 
 import users from '../models/users';
 
+import env from 'dotenv';
+
 import signupvalidation from '../helpers/signupvalidation';
+
+env.config();
 
 const signup = (req,res) => {
     const {error} =  signupvalidation.validation(req.body);
@@ -37,7 +41,7 @@ const signup = (req,res) => {
                 is_admin : req.body.is_admin
             }
 
-            const token = jwt.sign({id: newUser.id, email:newUser.email},'12345olly',{expiresIn:'5m'});
+            const token = jwt.sign({id: newUser.id, email:newUser.email},process.env.secret,{expiresIn:'5m'});
             newUser.token = token;
             users.push(newUser);
             // delete newUser.password;

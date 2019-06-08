@@ -30,7 +30,7 @@ const login = (req,res) => {
             const checkpassword = bcrybt.compareSync(req.body.password.trim(), user.password);
             
             if (checkpassword){
-                const token = jwt.sign({id: user.id, email:user.email},'12345olly',{expiresIn:'10m'});
+                const token = jwt.sign({id: user.id, email:user.email},process.env.secret,{expiresIn:'10m'});
                 user.token = token;
                 delete user.password;
                 return res.status(200).json({
