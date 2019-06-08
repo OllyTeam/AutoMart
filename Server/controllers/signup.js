@@ -40,7 +40,7 @@ const signup = (req,res) => {
             const token = jwt.sign({id: newUser.id, email:newUser.email},'12345olly',{expiresIn:'5m'});
             newUser.token = token;
             users.push(newUser);
-            delete newUser.password;
+            // delete newUser.password;
             return res.status(201).json({
                 status:201,
                 data:newUser
