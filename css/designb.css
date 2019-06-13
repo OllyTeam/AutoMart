@@ -1,0 +1,16 @@
+
+#car
+{
+	width: 33%;
+	box-sizing:border-box;
+/* 	padding: 5px 5px; */
+	background:rgb(0,0,0,0.10);
+	outline: none;
+	border:none;
+	border-bottom: 1px dotted #fff;
+	color:white;
+	border-radius: 5px;
+	margin:5px;
+	font-weight: bold;
+	background-color: black;
+}
